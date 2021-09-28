@@ -1,0 +1,36 @@
+Package: BVML
+Title: BV class prediction 
+Version: 0.0.0.9000
+Authors@R: c(
+    person(given = "Diego",
+           family = "Fernandez-Edreira",
+           role = c("aut", "cre"),
+           email = "diego.fedreira@udc.es"),
+    person(given = "Jose",
+           family = "Liñares-Blanco",
+           role = c("ctb"),
+           email = "j.linares@udc.es"),
+    person(given = "Carlos",
+           family = "Fernandez-Lozano",
+           role = c("ctb"),
+           email = "carlos.fernandez@udc.es")
+    )
+Description: Prediction of BV classes using a pre-trained Random Forest model. Classifies patients based on normalised counts of their microbiota. It does not follow any standard such as Nugent Score or Amsel Criterion.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: 
+    stats,
+    mlr,
+    utils,
+    pheatmap
+Depends: 
+    R (>= 2.10)
+VignetteBuilder: knitr

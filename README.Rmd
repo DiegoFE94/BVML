@@ -1,0 +1,44 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# BVML
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of BVML is to classify patients from BV disease
+
+## Installation
+
+To install the BVML, install from github using devtools:
+
+``` r
+install.packages("devtools")
+library(devtools)
+devtools::install_github("DiegoFE94/BVML")
+```
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(BVML)
+
+data(sample_data)
+s_data_checked <- check_sps(sample_data)
+norm_sample_data <- normdataset(s_data_checked)
+results <- BVClassify(norm_sample_data)
+
+```

@@ -1,0 +1,62 @@
+#' Predict BV classes from a given dataframe
+#'
+#' @param dataset dataframe: The columns correspond to the species used for classification and the rows correspond to the samples.
+#' @param plot_HM boolean:TRUE for make heatmap and FALSE for not
+#'
+#' @return dataframe: the first three columns correspond to the probability of belonging to each of the classes and the last one to the label of the class you belong to. Or list with dataframe and heatmap plot.
+#' @export
+#' @importFrom stats predict
+#' @importFrom stats hclust
+#' @importFrom utils data
+#' @importFrom mlr normalizeFeatures
+#' @importFrom pheatmap pheatmap
+#' @examples
+#' BVClassify(normdataset(sample_data))
+BVClassify <- function(dataset, plot_HM = FALSE){
+  features = modelC$features
+  dataset <- dataset[features]
+  test_task = mlr::normalizeFeatures(
+    dataset,
+    method = "range",
+    cols = NULL,
+    range = c(0,1),
+    on.constant = "quiet"
+  )
+  pred = predict(modelC, newdata = test_task, type = "prob")
+  results = pred$data
+  if (plot_HM == FALSE){
+    return(results)
+  }else if (plot_HM == TRUE){
+    clusters = results$response
+    all_data = cbind(dataset, clusters)
+    all_data = all_data[order(all_data[,9]),]
+    mat = all_data[1:8]
+    # scale on OTUs
+    mat.scale <- scale(mat, center = T, scale = T)
+    # scale on samples
+    mat.scale <- scale(t(mat.scale), center = T, scale = T)
+    col <- data.frame(clusters = all_data[9])
+    colors <- list(clusters =c("C1" ="#21908CFF", "C2"= "#440154FF", "C3" = "#FDE725FF"))
+
+    hmap = pheatmap::pheatmap(mat.scale,
+                    scale = 'none',
+                    cluster_rows = F,
+                    cluster_cols = F,
+                    fontsize_row = 8, fontsize_col = 8,
+                    fontsize = 8,
+                    show_colnames = FALSE,
+                    clustering_distance_rows = 'euclidean',
+                    clustering_method = 'ward.D',
+                    treeheight_row = 30,
+                    annotation_col = col,
+                    annotation_colors = colors,
+                    border_color = 'NA',
+                    main = 'Heatmap 8 Species')
+    nms = c("results", "heatmap")
+    l_results = list(results, hmap)
+    names(l_results) = nms
+    return(l_results)
+  }
+  }
+
+
