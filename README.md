@@ -41,3 +41,8 @@ norm_sample_data <- normdataset(s_data_checked)
 # Final step: make class prediction
 results <- BVClassify(norm_sample_data)
 ```
+
+## Questions?
+
+If you have any questions, please feel free to contact
+(<diego.fedreira@udc.es>).
