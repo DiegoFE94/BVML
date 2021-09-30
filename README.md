@@ -13,7 +13,7 @@ metagenomic profile of 8 bacterial species is able to classify patients
 into three classes:
 
   - Class C1: patients with incipient dysbiosis.
-  - Class C2: Patients with a BV+ profile.
+  - Class C2: patients with a BV+ profile.
   - Class C3: patients with a BV- profile.
 
 ## Installation
