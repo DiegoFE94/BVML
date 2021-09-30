@@ -27,16 +27,17 @@ BVClassify <- function(dataset, plot_HM = FALSE){
   if (plot_HM == FALSE){
     return(results)
   }else if (plot_HM == TRUE){
-    clusters = results$response
-    all_data = cbind(dataset, clusters)
+    Clusters = results$response
+    all_data = cbind(dataset, Clusters)
+    identical(rownames(dataset), rownames(results))
     all_data = all_data[order(all_data[,9]),]
     mat = all_data[1:8]
     # scale on OTUs
     mat.scale <- scale(mat, center = T, scale = T)
     # scale on samples
     mat.scale <- scale(t(mat.scale), center = T, scale = T)
-    col <- data.frame(clusters = all_data[9])
-    colors <- list(clusters =c("C1" ="#21908CFF", "C2"= "#440154FF", "C3" = "#FDE725FF"))
+    col <- data.frame(Clusters = all_data[9])
+    colors <- list(Clusters =c("C1" ="#21908CFF", "C2"= "#440154FF", "C3" = "#FDE725FF"))
 
     hmap = pheatmap::pheatmap(mat.scale,
                     scale = 'none',

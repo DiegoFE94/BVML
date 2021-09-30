@@ -31,14 +31,17 @@ devtools::install_github("DiegoFE94/BVML")
 ```
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to use the package:
 
 ```{r example}
 library(BVML)
-
+# First charge a demo dataset
 data(sample_data)
+# Second step: check that we have all needed species and select them
 s_data_checked <- check_sps(sample_data)
+# Third step: normalise your data
 norm_sample_data <- normdataset(s_data_checked)
+# Final step: make class prediction
 results <- BVClassify(norm_sample_data)
 
 ```
