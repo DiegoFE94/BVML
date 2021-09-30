@@ -18,11 +18,11 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of BVML is to classify patients from BV disease. The model in this package classifies patients into three classes:
+BVML is a patient stratification package for Bacteriosis Vaginalis disease. This package through a pre-trained Random Forest model and metagenomic profile of 8 bacterial species is able to classify patients into three classes:
 
-- Class C1: patients with incipient dysbiosis
+- Class C1: patients with incipient dysbiosis.
 - Class C2: Patients with a BV+ profile.
-- Class C3: patients presenting with a BV- profile
+- Class C3: patients with a BV- profile.
 
 ## Installation
 
