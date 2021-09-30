@@ -8,9 +8,11 @@
 <!-- badges: end -->
 
 The goal of BVML is to classify patients from BV disease. The model in
-this package classifies patients into three classes: - Class C1:
-patients with incipient dysbiosis - Class C2: Patients with a BV+
-profile. - Class C3: patients presenting with a BV- profile
+this package classifies patients into three classes:
+
+  - Class C1: patients with incipient dysbiosis
+  - Class C2: Patients with a BV+ profile.
+  - Class C3: patients presenting with a BV- profile
 
 ## Installation
 
