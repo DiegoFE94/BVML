@@ -47,7 +47,7 @@ package.
     samples.This function performs the log2 normalization of the
     species, a preprocessing necessary to perform the prediction.
 
-  - BClassify: This function has as input a dataframe whose columns
+  - BVClassify: This function has as input a dataframe whose columns
     correspond to the selected species (in the correct format) and rows
     correspond to the samples. It also has as input a logical value
     TRUE/FALSE. This function performs the classification of the samples
