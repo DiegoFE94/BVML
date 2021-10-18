@@ -33,6 +33,18 @@ install.packages("devtools")
 library(devtools)
 devtools::install_github("DiegoFE94/BVML")
 ```
+## Functionalities
+
+This section explains the different functionalities that constitute the package.
+
+- convert_ncbi_ID: This function has as input a dataframe in which the columns correspond to the NCBI IDs of the 8 species and the rows to the samples. The function converts the NCBI IDs to the species names in the correct format for prediction.
+
+- check_sps: This function has as input a dataframe whose columns correspond to the selected species and rows correspond to the samples. This function checks that all the required species are present in the dataframe. It also checks that the species are in the correct format.
+
+- normdataset: This function has as input a dataframe whose columns correspond to the selected species and rows correspond to the samples.This function performs the log2 normalization of the species, a preprocessing necessary to perform the prediction.
+
+- BClassify: This function has as input a dataframe whose columns correspond to the selected species (in the correct format) and rows correspond to the samples. It also has as input a logical value TRUE/FALSE. This function performs the classification of the samples into the three corresponding classes of the algorithm. The output is a dataframe where the columns correspond to the samples, the columns correspond to the probability of belonging to each class and to which class it corresponds according to the algorithm. In addition, if TRUE is selected in the input, it returns a Heatmap with the metagenomic profile of the dataframe.
+
 ## Example
 
 This is a basic example which shows you how to use the package:
