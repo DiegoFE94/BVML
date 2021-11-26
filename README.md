@@ -74,13 +74,6 @@ data(sample_data)
 results <- BVClassify(sample_data, type = "species", plot_HM = TRUE)
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
-
-``` r
-# Heatmap visualization
-```
-
-## Questions?
-
-If you have any questions, please feel free to contact
+<img src="man/figures/README-example-1.png" width="100%" /> \#\#
+Questions? If you have any questions, please feel free to contact
 (<diego.fedreira@udc.es>).

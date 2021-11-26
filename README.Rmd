@@ -55,7 +55,6 @@ library(BVML)
 data(sample_data)
 # Final step: make class prediction using species names and plotting the Heatmap
 results <- BVClassify(sample_data, type = "species", plot_HM = TRUE)
-# Heatmap visualization
 ```
 ## Questions? 
 If you have any questions, please feel free to contact (diego.fedreira@udc.es).
