@@ -49,14 +49,18 @@ package.
 
   - BVClassify: This function has as input a dataframe whose columns
     correspond to the selected species (in the correct format) and rows
-    correspond to the samples. It also has as input a logical value
-    TRUE/FALSE. This function performs the classification of the samples
-    into the three corresponding classes of the algorithm. The output is
-    a dataframe where the columns correspond to the samples, the columns
-    correspond to the probability of belonging to each class and to
-    which class it corresponds according to the algorithm. In addition,
-    if TRUE is selected in the input, it returns a Heatmap with the
-    metagenomic profile of the dataframe.
+    correspond to the samples.You can choose the type of input format of
+    the species you are using by using the type (string) parameter. If
+    you are using species names you should specify “species”, however if
+    you are using NCBI IDs you should specify “NCBI”.It also has as
+    input a logical value TRUE/FALSE. This function performs the
+    classification of the samples into the three corresponding classes
+    of the algorithm. The output is a dataframe where the columns
+    correspond to the samples, the columns correspond to the probability
+    of belonging to each class and to which class it corresponds
+    according to the algorithm. In addition, if TRUE is selected in the
+    input, it returns a Heatmap with the metagenomic profile of the
+    dataframe.
 
 ## Example
 
