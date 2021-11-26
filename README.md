@@ -70,10 +70,17 @@ This is a basic example which shows you how to use the package:
 library(BVML)
 # First charge a demo dataset
 data(sample_data)
-# Final step: make class prediction
+# Final step: make class prediction using species names and plotting the Heatmap
 results <- BVClassify(sample_data, type = "species", plot_HM = TRUE)
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" /> \#\#
-Questions? If you have any questions, please feel free to contact
+<img src="man/figures/README-example-1.png" width="100%" />
+
+``` r
+# Heatmap visualization
+```
+
+## Questions?
+
+If you have any questions, please feel free to contact
 (<diego.fedreira@udc.es>).
