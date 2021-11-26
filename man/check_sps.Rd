@@ -2,7 +2,7 @@
 % Please edit documentation in R/check_sps.R
 \name{check_sps}
 \alias{check_sps}
-\title{Chech that species names are correct and there are the 8 species required
+\title{Check that species names are correct and there are the 8 species required. Also try to put the species names in the required format.
 names have to be like this: Genero.species, i.e: "Lactobacillus.crispatus"}
 \usage{
 check_sps(dataset)
@@ -14,7 +14,7 @@ check_sps(dataset)
 dataframe
 }
 \description{
-Chech that species names are correct and there are the 8 species required
+Check that species names are correct and there are the 8 species required. Also try to put the species names in the required format.
 names have to be like this: Genero.species, i.e: "Lactobacillus.crispatus"
 }
 \examples{

@@ -4,10 +4,12 @@
 \alias{BVClassify}
 \title{Predict BV classes from a given dataframe}
 \usage{
-BVClassify(dataset, plot_HM = FALSE)
+BVClassify(dataset, type = "species", plot_HM = FALSE)
 }
 \arguments{
 \item{dataset}{dataframe: The columns correspond to the species used for classification and the rows correspond to the samples.}
+
+\item{type}{str: "species" if you have species names or "NCBI" if you have NCBI_IDs instead of species names}
 
 \item{plot_HM}{boolean:TRUE for make heatmap and FALSE for not}
 }
@@ -18,5 +20,5 @@ dataframe: the first three columns correspond to the probability of belonging to
 Predict BV classes from a given dataframe
 }
 \examples{
-BVClassify(normdataset(sample_data))
+BVClassify(sample_data, type = "species")
 }

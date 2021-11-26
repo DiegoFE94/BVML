@@ -2,21 +2,34 @@
 #'
 #' @param dataset dataframe: The columns correspond to the species used for classification and the rows correspond to the samples.
 #' @param plot_HM boolean:TRUE for make heatmap and FALSE for not
-#'
+#' @param type str: "species" if you have species names or "NCBI" if you have NCBI_IDs instead of species names
 #' @return dataframe: the first three columns correspond to the probability of belonging to each of the classes and the last one to the label of the class you belong to. Or list with dataframe and heatmap plot.
 #' @export
 #' @importFrom stats predict
 #' @importFrom stats hclust
+#' @importFrom stringr str_to_title
 #' @importFrom utils data
 #' @importFrom mlr normalizeFeatures
 #' @importFrom pheatmap pheatmap
 #' @examples
-#' BVClassify(normdataset(sample_data))
-BVClassify <- function(dataset, plot_HM = FALSE){
+#' BVClassify(sample_data, type = "species")
+BVClassify <- function(dataset, type = "species", plot_HM = FALSE){
+
+  # Type data
+  if (type == "NCBI"){
+    data = convert_ncbi_ID(dataset) # Convert NCBI IDs to species names
+  }else if(type == "species"){
+    data = check_sps(dataset) # Chaeck that have enough species and check their names
+  }
+
+  # Normalize Features
+  data = normdataset(data)
+
+  # Scale for Machine Learning
   features = modelC$features
-  dataset <- dataset[features]
+  data <- data[features]
   test_task = mlr::normalizeFeatures(
-    dataset,
+    data,
     method = "range",
     cols = NULL,
     range = c(0,1),
@@ -28,8 +41,8 @@ BVClassify <- function(dataset, plot_HM = FALSE){
     return(results)
   }else if (plot_HM == TRUE){
     Clusters = results$response
-    all_data = cbind(dataset, Clusters)
-    identical(rownames(dataset), rownames(results))
+    all_data = cbind(data, Clusters)
+    identical(rownames(data), rownames(results))
     all_data = all_data[order(all_data[,9]),]
     mat = all_data[1:8]
     # scale on OTUs

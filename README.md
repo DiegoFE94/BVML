@@ -39,8 +39,8 @@ package.
   - check\_sps: This function has as input a dataframe whose columns
     correspond to the selected species and rows correspond to the
     samples. This function checks that all the required species are
-    present in the dataframe. It also checks that the species are in the
-    correct format.
+    present in the dataframe and that they are in the correct format.
+    Also try to put the species names in the required format.
 
   - normdataset: This function has as input a dataframe whose columns
     correspond to the selected species and rows correspond to the
@@ -66,15 +66,10 @@ This is a basic example which shows you how to use the package:
 library(BVML)
 # First charge a demo dataset
 data(sample_data)
-# Second step: check that we have all needed species and select them
-s_data_checked <- check_sps(sample_data)
-# Third step: normalise your data
-norm_sample_data <- normdataset(s_data_checked)
 # Final step: make class prediction
-results <- BVClassify(norm_sample_data)
+results <- BVClassify(sample_data, type = "species", plot_HM = TRUE)
 ```
 
-## Questions?
-
-If you have any questions, please feel free to contact
+<img src="man/figures/README-example-1.png" width="100%" /> \#\#
+Questions? If you have any questions, please feel free to contact
 (<diego.fedreira@udc.es>).
