@@ -44,15 +44,15 @@ package.
 
   - normdataset: This function has as input a dataframe whose columns
     correspond to the selected species and rows correspond to the
-    samples.This function performs the log2 normalization of the
+    samples. This function performs the log2 normalization of the
     species, a preprocessing necessary to perform the prediction.
 
   - BVClassify: This function has as input a dataframe whose columns
     correspond to the selected species (in the correct format) and rows
-    correspond to the samples.You can choose the type of input format of
-    the species you are using by using the type (string) parameter. If
-    you are using species names you should specify “species”, however if
-    you are using NCBI IDs you should specify “NCBI”.It also has as
+    correspond to the samples. You can choose the type of input format
+    of the species you are using by using the type (string) parameter.
+    If you are using species names you should specify “species”, however
+    if you are using NCBI IDs you should specify “NCBI”. It also has as
     input a logical value TRUE/FALSE. This function performs the
     classification of the samples into the three corresponding classes
     of the algorithm. The output is a dataframe where the columns
