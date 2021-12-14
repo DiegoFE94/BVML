@@ -15,6 +15,3 @@ dataframe: Return a dataframe with the same structure but with log2 normalised c
 \description{
 Make log2 Normalization of a given dataframe
 }
-\examples{
-normdataset(iris)
-}

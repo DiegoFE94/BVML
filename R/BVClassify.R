@@ -1,9 +1,9 @@
-#' Predict BV classes from a given dataframe
+#' Predict Bacterial Vaginosis classes from a given dataframe
 #'
 #' @param dataset dataframe: The columns correspond to the species used for classification and the rows correspond to the samples.
-#' @param plot_HM boolean:TRUE for make heatmap and FALSE for not
-#' @param type str: "species" if you have species names or "NCBI" if you have NCBI_IDs instead of species names
-#' @return dataframe: the first three columns correspond to the probability of belonging to each of the classes and the last one to the label of the class you belong to. Or list with dataframe and heatmap plot.
+#' @param plot_HM logical: TRUE to plot the heatmap and FALSE to avoid plotting
+#' @param type character string: "species" if you have species names or "NCBI" if you have NCBI_IDs instead of species names
+#' @return dataframe/list: if plot_HM is FALSE return a dataframe where the first three columns correspond to the probability of belonging to each of the classes and the last one to the label of the class you belong to. If plot_HM is TRUE return a list with the dataframe and heatmap.
 #' @export
 #' @importFrom stats predict
 #' @importFrom stats hclust

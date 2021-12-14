@@ -17,6 +17,3 @@ dataframe
 Check that species names are correct and there are the 8 species required. Also try to put the species names in the required format.
 names have to be like this: Genero.species, i.e: "Lactobacillus.crispatus"
 }
-\examples{
-check_sps(sample_data)
-}

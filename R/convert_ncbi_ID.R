@@ -3,7 +3,7 @@
 #' @param dataset dataframe: The columns correspond to the species raw counts used for classification and the rows correspond to the samples
 #'
 #' @return dataframe: same dataframe but with column names changed
-#' @export
+#'
 #'
 #' @examples
 convert_ncbi_ID <- function(dataset){

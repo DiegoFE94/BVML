@@ -2,22 +2,22 @@
 % Please edit documentation in R/BVClassify.R
 \name{BVClassify}
 \alias{BVClassify}
-\title{Predict BV classes from a given dataframe}
+\title{Predict Bacterial Vaginosis classes from a given dataframe}
 \usage{
 BVClassify(dataset, type = "species", plot_HM = FALSE)
 }
 \arguments{
 \item{dataset}{dataframe: The columns correspond to the species used for classification and the rows correspond to the samples.}
 
-\item{type}{str: "species" if you have species names or "NCBI" if you have NCBI_IDs instead of species names}
+\item{type}{character string: "species" if you have species names or "NCBI" if you have NCBI_IDs instead of species names}
 
-\item{plot_HM}{boolean:TRUE for make heatmap and FALSE for not}
+\item{plot_HM}{logical: TRUE to plot the heatmap and FALSE to avoid plotting}
 }
 \value{
-dataframe: the first three columns correspond to the probability of belonging to each of the classes and the last one to the label of the class you belong to. Or list with dataframe and heatmap plot.
+dataframe/list: if plot_HM is FALSE return a dataframe where the first three columns correspond to the probability of belonging to each of the classes and the last one to the label of the class you belong to.If plot_HM is TRUE return a list with the dataframe and heatmap.
 }
 \description{
-Predict BV classes from a given dataframe
+Predict Bacterial Vaginosis classes from a given dataframe
 }
 \examples{
 BVClassify(sample_data, type = "species")

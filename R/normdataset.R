@@ -3,10 +3,9 @@
 #' @param dataset dataframe: The columns correspond to the species raw counts used for classification and the rows correspond to the samples
 #'
 #' @return dataframe: Return a dataframe with the same structure but with log2 normalised counts
-#' @export
+#'
 #'
 #' @examples
-#' normdataset(iris)
 normdataset = function(dataset){
   # Retain only numerics variables
   cols <- sapply(dataset, is.numeric)

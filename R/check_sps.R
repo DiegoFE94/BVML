@@ -4,9 +4,9 @@
 #' @param dataset dataframe:The columns correspond to the species used for classification and the rows correspond to the samples.
 #'
 #' @return dataframe
-#' @export
 #'
-#' @examples check_sps(sample_data)
+#'
+#' @examples
 check_sps <- function(dataset){
   out <- tryCatch(
     {
