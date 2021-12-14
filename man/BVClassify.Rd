@@ -14,7 +14,7 @@ BVClassify(dataset, type = "species", plot_HM = FALSE)
 \item{plot_HM}{logical: TRUE to plot the heatmap and FALSE to avoid plotting}
 }
 \value{
-dataframe/list: if plot_HM is FALSE return a dataframe where the first three columns correspond to the probability of belonging to each of the classes and the last one to the label of the class you belong to.If plot_HM is TRUE return a list with the dataframe and heatmap.
+dataframe/list: if plot_HM is FALSE return a dataframe where the first three columns correspond to the probability of belonging to each of the classes and the last one to the label of the class you belong to. If plot_HM is TRUE return a list with the dataframe and heatmap.
 }
 \description{
 Predict Bacterial Vaginosis classes from a given dataframe
